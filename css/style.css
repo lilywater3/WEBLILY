@@ -1,0 +1,551 @@
+@charset 'utf-8';
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+/* トップのスライダー設定 */
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to left,#C7E6E2,#6A5ACD);
+    z-index: -400;
+}
+.hero-logo {
+    max-width: 100%;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3em;
+}
+/* TOP画像 */
+.hero {
+    height: 100%;
+    max-width: 100%;
+    position: relative; 
+}
+.hero img {
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120%;
+    height: 100%;
+    opacity: 0.4;
+}
+.header {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+  padding: 10px;
+    background: rgba(202, 207, 207, 0.5);
+    z-index: 200;
+}
+.headline {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #fff;
+    font-size: 150px;
+    transform: translateY(-20%,30%);
+    z-index: 5;
+}
+/* mobail設定 */
+@media screen and (max-width:768px){
+    .headline {
+        font-size: 50px;
+    }
+    .hero {
+        height: 20px;
+    }
+    .hero img {
+        object-fit: contain;
+    }
+    .hero-logo {
+        height: 50vh;
+    }
+}
+/* TOPの見出し */
+
+/* サイトロゴとナビゲーションの並び */
+.header-logo-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* サイトロゴの表示 */
+.logo-area {
+    width: 200px;
+    margin: 0;
+    text-align: left;
+}
+/* ハンバーガーメニュー */
+.gnav-toggle {
+    position: relative;
+    margin-top: 12px;
+}
+/* チェックボックスなどを非表示にさせる */
+.gnav-hidden {
+    display: none;
+}
+/* アイコンのスペース */
+#gnav-open {
+    display: inline-block;
+    width: 50px;
+    height: 22px;
+    vertical-align: middle;
+}
+/* ハンバーガーの３本線をCSSで表現 */
+/* コンテント大事！ */
+#gnav-open span,
+#gnav-open span::before,
+#gnav-open span::after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    display: block;
+    cursor: pointer;
+    transition: 0.3s;
+    background: #555;
+}
+
+#gnav-open span::before {
+    bottom: -8px;
+}
+
+#gnav-open span::after {
+    bottom: -16px;
+}
+
+/* ハンバーガーメニューの黒背景 */
+#gnav-close {
+    display: none;
+    position: fixed;
+    z-index: 90;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+/* inputにつながるlabelにチェックがついたら表示させる */
+#gnav-input:checked~#gnav-close {
+    display: block;
+    opacity: 0.5;
+}
+/* ハンバーガーボタンクリック時のメニュー表示 */
+#gnav-input:checked~#gnav-content {
+    background: #CFD7DF;
+    transform: translatex(0%);
+    box-shadow: 6px 0 25px rgba(0, 0, 0, 0.8);
+}
+/* メニューの中身を画面外側に隠しておく */
+#gnav-content {
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 300;
+    width: 70%;
+    max-width: 300px;
+    height: 100%;
+    background: rgba(6, 48, 20, 0.8);
+    transition: 0.3s ease-in-out;
+    transform: translateX(-105%);
+}
+/* ハンバーガーメニュー各項目をまとめるulタグ */
+.gnav-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    text-transform: uppercase;
+}
+
+.gnav-item {
+    border-bottom: 2px dotted #eee;
+    margin: 10px;
+    padding-bottom: 20px;
+}
+.gnav-item a {
+    color: #00ACBA;
+    font-size: 12px;
+    display: block;
+    padding:2vw;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+.gnav-menu li {
+    list-style: none;
+}
+
+/* メニューのPC設定 */
+@media screen and (min-width:768px) {
+    .logo-area {
+        width: 250px;
+    }
+
+    .gnav-menu {
+        flex-direction: row;
+        padding-top: 15px;
+        margin: 0;
+    }
+
+    .gnav-item {
+        border-bottom: none;
+        margin: 0;
+        padding-bottom: 0;
+    }
+
+    .gnav-item li a {
+        color: #fff;
+        width: 120px;
+    }
+
+    .gnav-item a:hover {
+        color: #85a7cc;
+    }
+
+}
+.sp-only {
+    display: block;
+}
+.pc-only {
+    display: none;
+}
+@media screen and (min-width:768px){
+    .sp-only{
+        display: none;
+    }
+    .pc-only {
+        display: block;
+    }
+    .Ivent {
+        padding: 100px;
+        margin-top: 3em;
+    }
+}
+/* メイン設定 */
+.Ivent,
+.about,
+.Collection {
+    padding: 5em;
+}
+    img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+h2,figure {
+    margin: 0 auto;
+}
+h2 {
+    font-size: 30px;
+    min-height: 0vw;
+    font-weight: 400;
+    color: #fff;
+}
+p {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    color: #fff;
+    font-size: 18px;
+}
+/* イベントセクション */
+.Ivent-container {
+    display: flex;
+    flex-direction: column;
+    gap:clamp(80px ,30%,200px);
+}
+
+@media screen and (min-width:768px){
+    .Ivent-container{
+        flex-direction: row;
+        align-items: center;
+        padding: 0 60px;
+    }
+    .Ivent-container > .text {
+        flex: 1;
+    }
+    .Ivent-container > .img {
+        flex: 2;
+    }
+    img {
+        max-width: 60%;
+        transition: 0.7s;
+    }
+    img:hover {
+        filter: opacity(50%);
+        transform: scale(1.1);
+    }
+    .hero-logo img {
+        filter:none;
+        transform: none;
+    }
+    .about img,
+    .Ivent img,
+    .Restlan img{
+    width: 360px;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 60px;
+}
+/* ギャラリーセクション */
+.gallary img {
+    width: 220px;
+    height: 200px;
+    object-fit: cover;
+    padding: 10px;
+    transition: 0.7s;
+    border-radius: 60px;
+}
+}
+/* レストランセクション */
+.Restlan {
+    padding: 90px;
+}
+
+/* フッター設定 */
+  footer {
+    height: auto;
+    color: #fff;
+    background-color: #006581;
+  }
+  
+  footer .container {
+    max-width: 1200px;
+    padding: 20px 20px;
+    margin: 0 auto;
+  }
+  
+  .footA {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .footA p {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+  
+  .footB {
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .footB ul {
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .footB a {
+    display: block;
+    padding-bottom: 2px;
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    line-height: 20px;
+    transition: 0.5s;
+    letter-spacing: 3px;
+  }
+  
+  .footB a:hover {
+    border-bottom: 3px solid #fff;
+  }
+  
+  @media(min-width:768px) {
+    .footB ul {
+      display: flex;
+    }
+  
+    .footB a {
+      margin-left: 20px;
+      margin-right: 20px;
+      margin-bottom: 0;
+    }
+  }
+  
+  .footC {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .footC ul {
+    display: flex;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+  }
+  .footC a {
+    display: block;
+    border-radius: 20px;
+    padding: 5px;
+    background-color: #006581;
+    font-size: 25px;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+  }
+  
+  .footC a {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 0;
+  }
+  .gallary{
+    margin: 10px 50px;
+    display: flex;
+    justify-content: center;
+}
+.Collection,
+.Restlan,
+.about, 
+.Ivent{
+    box-sizing: content-box;
+    background: linear-gradient(to left,#C7E6E2,#6A5ACD);
+}
+@media screen and (max-width:769px) {
+    .gallary img {
+        width: 150px;
+        height: auto;
+        object-fit: cover;
+        padding: 1em;
+        transition: 0.7s;
+        max-width: 100%;
+    }
+}
+/* モアボタン設定 */
+.btn-item {
+    display: inline-block;
+    padding: 20px 80px;
+    text-decoration: none;
+    background: rgb(228,226,223);
+    color: #b1a2c1;
+    border-radius: 20px;
+  }
+  
+.btn-item:hover {
+    transition: all .2s linear;
+    background: rgb(91, 110, 232);
+  }
+  /* 画像ふわっと表示設定 */
+  .fadein {
+    opacity : 0;
+    transform : translate(0, 100px);
+    transition : all 1s;
+  }
+   
+  .fadein.active{
+    opacity : 1;
+    transform : translate(0, 0);
+  }
+  /*リンクを右下に固定*/
+#page-top {
+    position: fixed;
+    right: 10px;
+    bottom:30px;
+    z-index: 2;
+      /*はじめは非表示*/
+    opacity: 0;
+    transform: translateY(150px);
+  }
+  
+  /*上に上がる動き*/
+  #page-top.UpMove{
+    animation: UpAnime 0.5s forwards;
+  }
+  
+  @keyframes UpAnime{
+    from {
+      opacity: 0;
+    transform: translateY(150px);
+    }
+    to {
+      opacity: 1;
+    transform: translateY(0);
+    }
+  }
+  
+  /*下に下がる動き*/
+  #page-top.DownMove{
+    animation: DownAnime 0.5s forwards;
+  }
+  
+  @keyframes DownAnime{
+    from {
+      opacity: 1;
+    transform: translateY(0);
+    }
+    to {
+      opacity: 1;
+    transform: translateY(150px);
+    }
+  }
+  
+  /*画像の切り替えと動き*/
+  #page-top a {
+      /*aタグの形状*/
+    display: block;
+    width: 100px;
+    height: 100px;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase; 
+    text-decoration: none;
+    font-size:0.8rem;
+      /*背景画像の指定*/
+    background: url("../img/icon2.png") no-repeat center;
+    background-size: contain;
+  }
+  
+  #page-top.floatAnime a{
+    width: 100px;
+    height: 130px;
+      /*背景画像の指定*/
+    background: url("../img/icon.png") no-repeat center;
+    background-size: contain;
+      /*アニメーションの指定*/
+    animation: floatAnime 2s linear infinite;
+    opacity: 0;
+  }
+  
+  @keyframes floatAnime {
+    0% { transform: translateX(0); opacity: 0; }
+    25% { transform: translateX(-6px);opacity: 1; }
+    50% { transform: translateX(0) }
+    100% { transform: translateX(6px);opacity: 1; }
+  }
+  
+  /*Page Topと書かれたテキストの位置*/
+  #page-top span{
+      position: absolute;
+      bottom: -20px;
+      right: 20px;
+    color: #666;
+  }
