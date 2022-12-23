@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LILY MUSEUM</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+    <header class="header">
+      <div class="header-logo-menu">
+        <div class="logo-area">
+            <img src="img/logo.png" alt="ロゴ">
+        </div>
+        <nav class="sp-only">
+          <!-- メモ：スマホ版navタグ -->
+          <div class="gnav-toggle">
+            <input id="gnav-input" type="checkbox" class="gnav-hidden">
+            <label id="gnav-open" for="gnav-input"><span></span></label>
+            <label class="gnav-unshown" id="gnav-close" for="gnav-input"></label>
+            <div id="gnav-content">
+              <ul class="gnav-menu">
+                <li class="gnav-item">
+                  <a href="index.html">TOP</a>
+                </li>
+                <li class="gnav-item">
+                  <a href="ibent.html">Event</a>
+                </li>
+                <li class="gnav-item">
+                  <a href="gallary.html">Collection</a>
+                </li>
+                <li class="gnav-item">
+                  <a href="about.html">About</a>
+                </li>
+                <li class="gnav-item">
+                  <a href="lunch.html">Restaurant</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <nav class="pc-only">
+          <!-- メモ：パソコン版navタグ -->
+          <ul class="gnav-menu">
+            <li class="gnav-item">
+              <a href="index.html">TOP</a>
+            </li>
+            <li class="gnav-item">
+              <a href="ibent.html">Event</a>
+            </li>
+            <li class="gnav-item">
+              <a href="gallary.html">Collection</a>
+            </li>
+            <li class="gnav-item">
+              <a href="about.html">About</a>
+            </li>
+            <li class="gnav-item">
+              <a href="lunch.html">Restaurant</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+</header>
+<main>
+  <section class="hero-logo">
+    <div class="hero">
+        <img src="img/top.jpg" alt="">
+        <h1 class="headline">LILY MUSEUM</h1>
+    </div>
+    <div class="slider"></div>
+ 
+  </section>
+  <section class="Ivent">
+<div class="Ivent-container">
+  <div class="text">
+    <h2>Event</h2>
+    <p>開催中の展覧会・ワークショップ</p>
+    <p>本展では、モネの生涯に渡る作品をはじめとする類のないコレクションをご紹介します<br>
+      ほかにも趣向を凝らした企画展を随時開催しています</p>
+    <a href="ibent.html" class="btn-item">more</a>
+  </div>
+  <figure class="img">
+    <img src="img/ibent3.png" alt="mone" class="fadein">
+  </figure>
+</div>
+  </section>
+
+  <section class="Collection">
+    <div class="Ivent-container">
+      <div class="text">
+    <h2>Collection</h2>
+    <p>650展の常設作品の中から一部をご紹介します<br>
+      西洋美術のほか書跡や<br>
+      金属器、ガラス器などの工芸品と<br>
+      時代や分野の幅はきわめて広く、稀品を揃えました</p>
+    <div class="gallary">
+      <img src="img/mone2.jpg" class="fadein">
+        <img src="img/art2.jpg" class="fadein">
+        <img src="img/art3.jpg" class="fadein">
+    </div>
+    <a href="gallary.html" class="btn-item">more</a>
+  </div>
+  </div>
+  </section>
+
+  <section class="Restlan">
+    <div class="Ivent-container">
+      <div class="text">
+        <h2>Restaurant</h2>
+        <p>洋食レストラン＆カフェ</p>
+        <p>待ち合わせに。そして、ご会食にも<br>
+          さまざまなシーンに合わせて楽しめる食の空間でおくつろぎください</p>
+        <a href="lunch.html" class="btn-item">more</a>
+      </div>
+      <figure class="img">
+        <img src="img/IMG_4842.JPG" class="fadein">
+      </figure>
+    </div>
+  </section>
+
+  <section class="about">
+      <div class="Ivent-container">
+        <div class="text">
+        <h2>About</h2>
+        <p>当館は西洋美術絵画をメインに650点ほどのコレクションを展示しております <br>
+          睡蓮～Lily water～に囲まれた公園内に建設されたことが名の由来となります<br>
+           美術の世界で一休みしませんか<br>
+          </p>
+           <a href="about.html" class="btn-item">more</a>
+          </div>
+          <figure class="img">
+        <img src="img/pi3.JPG" class="fadein">
+      </figure>
+    </div>
+  </section>
+</main>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    
+    <script src="app.js"></script>
+
+  <footer>
+    <script src="https://use.fontawesome.com/926fe18a63.js"></script>
+    <p id="page-top"><a href="#"><span>Page Top</span></a></p>
+    <div class="container">
+      <nav class="footB">
+        <ul>
+          <li><a href="index.html">TOP</a></li>
+          <li><a href="index.html">MENU</a></li>
+          <li><a href="#">CONCEPT</a></li>
+          <li><a href="#">NEWS</a></li>
+          <li><a href="#">SNS</a></li>
+          <li><a href="#">ACCESS</a></li>
+          <li><a href="#">CONTACT</a></li>
+          <li><a href="#">ABOUT</a></li>
+        </ul>
+      </nav>
+      <div class="footA">
+        <div class="foot_img">
+          <img src="#" alt="" width="250px" />
+        </div>
+      </div>
+      <nav class="footC">
+        <ul>
+          <li><a href="https://www.facebook.com/spoonkokubunji/"><span class="fa fa-facebook"></span></a></li>
+          <li>
+            <a href="https://twitter.com/kokubunnjispoon"><span class="fa fa-twitter"></span></a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+  <script src="./app.js"></script>
+</body>
+</html>
